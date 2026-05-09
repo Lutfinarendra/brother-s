@@ -132,6 +132,13 @@ nav a:hover{
   color:#d40000;
 }
 
+.tagline-container {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 12px;
+    padding: 10px;
+}
+
 /* RIGHT NAV */
 .nav-right{
   display:flex;
@@ -1098,4 +1105,54 @@ footer p{
 @keyframes slideUp {
   from { top: 20px; opacity: 1; }
   to { top: -50px; opacity: 0; }
+}
+
+/* Khusus untuk layar HP (lebar maksimal 768px) */
+@media (max-width: 768px) {
+  
+  /* 1. Perbaiki Navbar/Header */
+  nav {
+    flex-direction: column; /* Menu jadi menumpuk ke bawah */
+    height: auto;
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column; /* Home, Menu, Contact jadi list vertikal */
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* 2. Sesuaikan Ukuran Logo dan Tombol di Header */
+  .logo img {
+    width: 80px; /* Perkecil logo agar tidak makan tempat */
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* 3. Perbaiki Banner/Hero Section */
+  .hero-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 24px; /* Kecilkan teks judul */
+  }
+
+  /* 4. Grid Menu (Kartu Makanan) */
+  .menu-wrapper {
+    grid-template-columns: 1fr; /* Paksa jadi 1 kolom saja di HP */
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%; /* Kartu jadi selebar layar HP */
+  }
 }
