@@ -1111,30 +1111,37 @@ footer p{
 @media (max-width: 768px) {
   
   /* 1. Perbaiki Navbar/Header */
-  nav {
-    flex-direction: column; /* Menu jadi menumpuk ke bawah */
-    height: auto;
-    padding: 20px 10px;
-    gap: 15px;
-  }
-
-  .nav-links {
+ header, nav {
+    width: 100% !important;
+    height: auto !important; /* Jangan dikunci tingginya */
+    min-height: 80px;
+    padding: 15px 5%;
     display: flex;
-    flex-direction: column; /* Home, Menu, Contact jadi list vertikal */
+    flex-direction: column; /* Default menumpuk untuk mobile */
     align-items: center;
-    gap: 10px;
-  }
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+ .nav-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Supaya kalau tidak muat, dia pindah baris */
+    justify-content: center;
+}
 
   /* 2. Sesuaikan Ukuran Logo dan Tombol di Header */
   .logo img {
     width: 80px; /* Perkecil logo agar tidak makan tempat */
   }
 
-  .header-actions {
-    width: 100%;
-    justify-content: center;
+ .header-actions {
+    display: flex;
+    align-items: center;
     gap: 10px;
-  }
+    justify-content: center;
+    width: 100%;
+}
 
   /* 3. Perbaiki Banner/Hero Section */
   .hero-section {
@@ -1155,4 +1162,38 @@ footer p{
   .card {
     width: 100%; /* Kartu jadi selebar layar HP */
   }
+}
+
+@media (max-width: 480px) {
+    /* Perkecil teks menu */
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* Logo harus mengecil di HP */
+    .logo img {
+        max-width: 60px;
+        height: auto;
+    }
+
+    /* Tombol Lihat Produk jangan terlalu besar */
+    .lihat-produk-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+        width: auto;
+    }
+
+    /* Tagline yang pink itu agar tidak nabrak */
+    .tagline-container {
+        position: relative !important; /* Jangan pakai absolute jika ada */
+        margin-top: 20px;
+        width: 90%;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    /* Hero section agar tidak tertutup header */
+    .hero {
+        padding-top: 20px;
+    }
 }
