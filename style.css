@@ -324,23 +324,23 @@ nav a:hover{
 }
 
 .icon1{
-  top:300px;
+  top:200px;
   left:50%;
 }
 
 .icon2{
-  top:500px;
-  right:70%;
+  top:200px;
+  right:85%;
 }
 
 .icon3{
-  bottom:250px;
+  bottom:40px;
   left:35%;
 }
 
 .icon4{
-  bottom:250px;
-  right:35%;
+  bottom:30px;
+  right:10%;
 }
 
 @keyframes float{
@@ -1169,7 +1169,7 @@ footer p{
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important; /* Kunci semua di tengah secara vertikal */
-        padding: 0 8px !important; /* Padding sangat kecil agar logo mepet kiri */
+        padding: 0 13px !important; /* Padding sangat kecil agar logo mepet kiri */
         height: 50px !important; /* Kecilkan tinggi kotak putih agar pas */
     }
 
@@ -1177,7 +1177,7 @@ footer p{
     
    /* Gunakan ini untuk menggeser logo secara independen */
     /* Angka negatif (misal -5px) ke kiri, angka positif (misal 5px) ke kanan */
-    transform: translateX(-60px) !important; 
+    transform: translateX(-50px) !important; 
     
     display: flex !important;
     align-items: center !important;
@@ -1204,11 +1204,10 @@ footer p{
 
     /* 2. Perkecil sedikit ukuran font agar pas di layar kecil */
     .nav-links a {
-        font-size: 7.5px !important; /* Ukuran font disesuaikan */
-        font-weight: 800 !important;
+        font-size: 11px !important; /* Ukuran font diperbesar dari sebelumnya */
+        font-weight: 900 !important;
         text-transform: uppercase !important;
-        white-space: nowrap !important; /* Jangan biarkan teks 'patah' */
-        line-height: 1 !important;
+        white-space: nowrap !important;
     }
 
     /* 3. Atur ulang navbar-inner agar pembagian ruangnya pas */
@@ -1223,11 +1222,12 @@ footer p{
 
     /* 4. Pastikan area kanan tidak terlalu lebar */
     .nav-right {
+        margin-left: auto !important; /* JURUS SAKTI: Dorong semua elemen kanan ke ujung */
         display: flex !important;
         align-items: center !important;
-        gap: 4px !important;
-        flex-shrink: 0 !important; /* Jangan biarkan area ini mengecilkan menu */
+        gap: 8px !important;
     }
+
     .nav-btn {
         font-size: 7px !important;
         padding: 4px 6px !important;

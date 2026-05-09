@@ -214,7 +214,7 @@ function checkoutWA(){
 
 Apakah kuota masih tersedia? Mohon informasikan detail pembayarannya. Terima kasih!`;
 
-  const wa = "62895389539520";
+  const wa = "6289679312451";
 
   const url =
 `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
