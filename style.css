@@ -1177,7 +1177,7 @@ footer p{
     
    /* Gunakan ini untuk menggeser logo secara independen */
     /* Angka negatif (misal -5px) ke kiri, angka positif (misal 5px) ke kanan */
-    transform: translateX(-50px) !important; 
+    transform: translateX(-30px) !important; 
     
     display: flex !important;
     align-items: center !important;
