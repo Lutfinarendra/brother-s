@@ -221,3 +221,29 @@ Apakah kuota masih tersedia? Mohon informasikan detail pembayarannya. Terima kas
   // PAKAI LOCATION BIAR PASTI OPEN
   window.location.href = url;
 }
+
+function bukaModalQRIS() {
+    // Cari elemen modal berdasarkan ID, lalu ubah display-nya jadi flex
+    const modal = document.getElementById("modal-qris");
+    modal.style.setProperty("display", "flex", "important"); 
+    
+    // Update nominal harga
+    let total = 0;
+    cart.forEach(item => total += item.total);
+    document.getElementById("qris-total-amount").innerText = `Rp ${total.toLocaleString("id-ID")}`;
+}
+
+function tutupModalQRIS() {
+    document.getElementById("modal-qris").style.display = "none";
+}
+
+function konfirmasiBayarWA() {
+    // Fungsi ini akan mengarahkan user ke WA untuk kirim bukti
+    let total = 0;
+    cart.forEach(item => total += item.total);
+    
+    let pesan = `Halo Brother's Dessert! Saya sudah melakukan pembayaran via QRIS sebesar Rp ${total.toLocaleString("id-ID")}. Berikut bukti pembayarannya.`;
+    
+    let waLink = `https://wa.me/6289679312451?text=${encodeURIComponent(pesan)}`;
+    window.open(waLink, '_blank');
+}
