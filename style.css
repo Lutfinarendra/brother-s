@@ -59,19 +59,16 @@ body{
 }
 
 /* TOP RUNNING */
-.top-running{
-  background:#ef6c00;
-
-  overflow:hidden;
-
-  padding:12px 0;
-
-  border-bottom:4px solid #111;
+.top-running {
+  background: #ef6c00;
+  overflow: hidden;
+  /* Atur padding: Atas(5px) Kanan(0) Bawah(15px) Kiri(0) */
+  padding: 15px 0 15px 0 !important; 
+  border-bottom: 4px solid #111;
 }
 
 .top-running-content{
   color:white;
-
   font-size:22px;
   font-weight:900;
 
@@ -80,6 +77,7 @@ body{
   white-space:nowrap;
 
   animation:toprun 18s linear infinite;
+  
 }
 
 @keyframes toprun{
@@ -252,7 +250,7 @@ nav a:hover{
 
 /* HERO TITLE */
 .hero-content h1{
-  font-size:170px;
+  font-size:50px !important;
   line-height:1;
 
   font-weight:900;
@@ -801,10 +799,9 @@ footer p{
 /* =========================
    RESPONSIVE
 ========================= */
-@media(max-width:900px){
-
-  .navbar{
-    width:95%;
+@media (max-width: 600px) {
+  .nav-links {
+    display: none !important;
   }
 
   .navbar-inner{
@@ -1164,36 +1161,120 @@ footer p{
   }
 }
 
+/* RESET UNTUK HP (MAX 480PX) */
 @media (max-width: 480px) {
-    /* Perkecil teks menu */
-    .nav-links a {
-        font-size: 14px;
+    /* 1. Logo Mentok Kiri & Hilangkan Padding Berlebih */
+    .navbar-inner {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important; /* Kunci semua di tengah secara vertikal */
+        padding: 0 8px !important; /* Padding sangat kecil agar logo mepet kiri */
+        height: 50px !important; /* Kecilkan tinggi kotak putih agar pas */
     }
 
-    /* Logo harus mengecil di HP */
-    .logo img {
-        max-width: 60px;
-        height: auto;
-    }
-
-    /* Tombol Lihat Produk jangan terlalu besar */
-    .lihat-produk-btn {
-        padding: 10px 15px;
-        font-size: 12px;
-        width: auto;
-    }
-
-    /* Tagline yang pink itu agar tidak nabrak */
-    .tagline-container {
-        position: relative !important; /* Jangan pakai absolute jika ada */
-        margin-top: 20px;
-        width: 90%;
-        font-size: 10px;
-        text-align: center;
-    }
+    .logo {
     
-    /* Hero section agar tidak tertutup header */
-    .hero {
-        padding-top: 20px;
+   /* Gunakan ini untuk menggeser logo secara independen */
+    /* Angka negatif (misal -5px) ke kiri, angka positif (misal 5px) ke kanan */
+    transform: translateX(-60px) !important; 
+    
+    display: flex !important;
+    align-items: center !important;
+}
+
+.logo img {
+    height: 50px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+    /* 1. Pastikan kontainer menu punya lebar yang cukup dan flex row */
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important; /* Paksa satu baris horizontal */
+        flex-wrap: nowrap !important; /* HARUS: Jangan biarkan teks pindah ke bawah */
+        align-items: center !important;
+        gap: 5px !important; /* Perkecil jarak antar menu agar muat */
+        margin: 0 !important;
+        padding: 0 !important;
+        flex: 1 !important; /* Biar dia mengambil ruang tengah yang tersedia */
+        justify-content: center !important;
+    }
+
+    /* 2. Perkecil sedikit ukuran font agar pas di layar kecil */
+    .nav-links a {
+        font-size: 7.5px !important; /* Ukuran font disesuaikan */
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important; /* Jangan biarkan teks 'patah' */
+        line-height: 1 !important;
+    }
+
+    /* 3. Atur ulang navbar-inner agar pembagian ruangnya pas */
+    .navbar-inner {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 5px !important; /* Mepet ke kiri dan kanan */
+        height: 50px !important;
+    }
+
+    /* 4. Pastikan area kanan tidak terlalu lebar */
+    .nav-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        flex-shrink: 0 !important; /* Jangan biarkan area ini mengecilkan menu */
+    }
+    .nav-btn {
+        font-size: 7px !important;
+        padding: 4px 6px !important;
+        margin-top: 0 !important; /* Pastikan tidak ada margin atas */
+        display: flex !important;
+        align-items: center !important;
+        height: auto !important;
+        line-height: 1 !important;
+        border: 1.5px solid #000 !important;
+        box-shadow: 2px 2px 0px #000 !important;
+    }
+
+    /* 4. Buletan Keranjang Dikeatasin & Rapih */
+    .cart {
+        width: 28px !important; /* Kecilkan sedikit agar proporsional */
+        height: 28px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        background: #fff !important;
+        border: 2px solid #000 !important;
+        border-radius: 50% !important;
+        box-shadow: 2px 2px 0px #000 !important;
+        margin-top: 0 !important; /* Paksa naik sejajar yang lain */
+    }
+
+    .cart img, .cart-icon {
+        width: 14px !important;
+        height: auto !important;
+    }
+
+    /* Angka Keranjang (Badge Merah) */
+    #cart-count {
+        position: absolute !important;
+        top: -4px !important; /* Geser ke atas lingkaran putih */
+        right: -4px !important; /* Geser ke kanan lingkaran putih */
+        font-size: 7px !important;
+        background: red !important;
+        color: white !important;
+        padding: 1px 3px !important;
+        border: 1px solid #000 !important;
+        border-radius: 50% !important;
+        min-width: 8px !important;
+        height: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
