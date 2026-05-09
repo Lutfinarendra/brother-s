@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Brother's Dessert Box</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <!-- TOP RUNNING -->
+    <div class="top-running">
+
+      <div class="top-running-content">
+
+        🔥 PRE ORDER BATCH 3
+        ✦ OPEN 09:00 - 22:00
+        ✦ DESSERT BOX PREMIUM
+        ✦ DELIVERY AVAILABLE
+
+      </div>
+
+    </div>
+
+    <!-- NAVBAR CONTENT -->
+    <div class="navbar-inner">
+
+      <!-- LOGO -->
+      <div class="logo">
+
+        <img
+          src="WhatsApp_Image_2026-05-09_at_6.19.12_PM-removebg-preview.png"
+          alt="Logo"
+        >
+
+      </div>
+
+      <!-- MENU -->
+      <nav>
+
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+      <!-- RIGHT -->
+      <div class="nav-right">
+
+        <a href="#menu" class="nav-btn">
+          LIHAT PRODUK
+        </a>
+
+        <div class="cart">
+
+          🛒
+
+          <span id="cart-count">
+            0
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <!-- ICON -->
+    <div class="icon icon1">🍰</div>
+    <div class="icon icon2">🍫</div>
+    <div class="icon icon3">🧁</div>
+    <div class="icon icon4">🤎</div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+
+      <h1>
+        BROTHER'S
+      </h1>
+
+      <div class="hero-tag">
+        BAHAGIA SESIMPEL MAKAN DESSERT BOX
+      </div>
+
+      <br>
+
+      <a href="#menu" class="hero-btn">
+        PESAN SEKARANG
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- RUNNING TEXT -->
+  <section class="running-text">
+
+    <div class="running-content">
+
+      OREO
+      ✦ TURKISH CHOCOLATE
+      ✦ RED VELVET
+      ✦ TIRAMISU
+      ✦ OREO
+      ✦ TURKISH CHOCOLATE
+      ✦ RED VELVET
+      ✦ TIRAMISU
+
+    </div>
+
+  </section>
+
+ <!-- MENU -->
+<section class="menu" id="menu">
+
+  <div class="title">
+
+    <h2>BEST MENU</h2>
+
+    <p>
+      Pilih dessert favoritmu
+    </p>
+
+  </div>
+
+  <div class="menu-wrapper">
+
+    <!-- ========================= -->
+    <!-- CARD 1 -->
+    <!-- ========================= -->
+    <div class="card">
+
+  <img src="oreo.png" />
+
+  <div class="card-content">
+
+    <h3>OREO</h3>
+    <span>Mulai Rp 10.000</span>
+
+    <div class="card-btns">
+
+      <button class="preview-btn" onclick="openPreview('OREO','Mulai Rp 10.000','Perpaduan sempurna antara kelezatan biskuit Oreo yang ikonik dengan cream cheese yang lembut dan lumer di mulut. Setiap lapisannya memberikan sensasi tekstur yang kaya—mulai dari renyahnya crumble Oreo di bagian bawah hingga taburan keju parut melimpah yang menutupi seluruh permukaan, memberikan harmoni rasa manis dan gurih dalam setiap suapan. Paling nikmat disantap dalam keadaan dingin!','oreo.png')">
+        PREVIEW
+      </button>
+
+      <button class="order-btn" onclick="toggleQty(this)">
+        ORDER
+      </button>
+
+    </div>
+
+    <!-- QTY (HIDDEN DEFAULT) -->
+    <div class="qty-box hidden">
+  <select class="size-select">
+    <option value="10000">150ml - 10.000</option>
+    <option value="15000">250ml - 15.000</option>
+    <option value="25000">450ml - 25.000</option>
+  </select>
+
+      <div class="qty-control">
+
+        <button onclick="minusQty(this)">-</button>
+
+        <span class="qty-number">1</span>
+
+        <button onclick="plusQty(this)">+</button>
+
+      </div>
+
+      <button class="add-cart-btn" onclick="addToCart(this,'OREO')">
+        TAMBAH KE KERANJANG
+      </button>
+
+    </div>
+
+  </div>
+</div>
+    <!-- ========================= -->
+    <!-- CARD 2 -->
+    <!-- ========================= -->
+    <div class="card">
+
+  <img src="cokelat.png" />
+
+  <div class="card-content">
+
+    <h3>TURKISH CHOCOLATE</h3>
+    <span>Mulai Rp 10.000</span>
+
+    <div class="card-btns">
+
+      <button class="preview-btn" onclick="openPreview('TURKISH CHOCOLATE','Mulai Rp 10.000','Coklat premium ala Turki yang super lumer.','img.jpg')">
+        PREVIEW
+      </button>
+
+      <button class="order-btn" onclick="toggleQty(this)">
+        ORDER
+      </button>
+
+    </div>
+
+    <!-- QTY (HIDDEN DEFAULT) -->
+    <div class="qty-box hidden">
+
+      <select class="size-select">
+        <option value="10000">150ml - 10.000</option>
+        <option value="16000">250ml - 16.000</option>
+        <option value="30000">450ml - 30.000</option>
+      </select>
+
+      <div class="qty-control">
+
+        <button onclick="minusQty(this)">-</button>
+
+        <span class="qty-number">1</span>
+
+        <button onclick="plusQty(this)">+</button>
+
+      </div>
+
+      <button class="add-cart-btn" onclick="addToCart(this,'TURKISH CHOCOLATE')">
+        TAMBAH KE KERANJANG
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+    <!-- ========================= -->
+    <!-- CARD 3 -->
+    <!-- ========================= -->
+    <div class="card">
+
+  <img src="REd velvet.png" />
+
+  <div class="card-content">
+
+    <h3>RED VELVET</h3>
+    <span>Mulai Rp 10.000</span>
+
+    <div class="card-btns">
+
+      <button class="preview-btn" onclick="openPreview('RED VELVET','Mulai Rp 10.000','Red velvet lembut dengan cream cheese premium.','img.jpg')">
+        PREVIEW
+      </button>
+
+      <button class="order-btn" onclick="toggleQty(this)">
+        ORDER
+      </button>
+
+    </div>
+
+    <!-- QTY (HIDDEN DEFAULT) -->
+    <div class="qty-box hidden">
+
+      <select class="size-select">
+        <option value="10000">150ml - 10.000</option>
+        <option value="16000">250ml - 16.000</option>
+        <option value="30000">450ml - 30.000</option>
+      </select>
+
+      <div class="qty-control">
+
+        <button onclick="minusQty(this)">-</button>
+
+        <span class="qty-number">1</span>
+
+        <button onclick="plusQty(this)">+</button>
+
+      </div>
+
+      <button class="add-cart-btn" onclick="addToCart(this,'RED VELVET')">
+        TAMBAH KE KERANJANG
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+    <!-- ========================= -->
+    <!-- CARD 4 -->
+    <!-- ========================= -->
+    <div class="card">
+
+  <img src="tiramisu.png" />
+
+  <div class="card-content">
+
+    <h3>TIRAMISU</h3>
+    <span>Mulai Rp 10.000</span>
+
+    <div class="card-btns">
+
+      <button class="preview-btn" onclick="openPreview('TIRAMISU','Mulai Rp 10.000','Dessert kopi creamy dengan coklat premium.','img.jpg')">
+        PREVIEW
+      </button>
+
+      <button class="order-btn" onclick="toggleQty(this)">
+        ORDER
+      </button>
+
+    </div>
+
+    <!-- QTY (HIDDEN DEFAULT) -->
+    <div class="qty-box hidden">
+
+      <select class="size-select">
+        <option value="10000">150ml - 10.000</option>
+        <option value="16000">250ml - 16.000</option>
+        <option value="30000">450ml - 30.000</option>
+      </select>
+
+      <div class="qty-control">
+
+        <button onclick="minusQty(this)">-</button>
+
+        <span class="qty-number">1</span>
+
+        <button onclick="plusQty(this)">+</button>
+
+      </div>
+
+      <button class="add-cart-btn" onclick="addToCart(this,'TIRAMISU')">
+        TAMBAH KE KERANJANG
+      </button>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+  <!-- PREVIEW MODAL -->
+  <div class="preview-modal" id="previewModal">
+
+    <div class="preview-box">
+
+      <span
+        class="close-preview"
+        onclick="closePreview()"
+      >
+        ✕
+      </span>
+
+      <img id="previewImg">
+
+      <h2 id="previewTitle"></h2>
+
+      <h3 id="previewPrice"></h3>
+
+      <p id="previewDesc"></p>
+
+    </div>
+
+  </div>
+
+  <!-- CART OVERLAY -->
+<!-- CART OVERLAY FINAL -->
+<div id="cartModal" class="cart-modal hidden">
+
+  <div class="cart-panel">
+
+    <div class="cart-header">
+      <h2>🛒 Keranjang Kamu</h2>
+      <button onclick="closeCart()">✕</button>
+    </div>
+
+    <div id="cartList"></div>
+
+    <div class="cart-footer">
+      <h3 id="cartTotal">Total: Rp 0</h3>
+
+      <button onclick="checkoutWA()">
+        Checkout WhatsApp 📲
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+
+  <!-- FOOTER -->
+  <footer id="contact">
+
+    <h3>Brother's Dessert Box</h3>
+
+    <p>
+      Instagram : @brother.dessert
+    </p>
+
+    <p>
+      WhatsApp : 0895389539520
+    </p>
+
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
