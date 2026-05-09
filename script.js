@@ -216,8 +216,7 @@ Apakah kuota masih tersedia? Mohon informasikan detail pembayarannya. Terima kas
 
   const wa = "6289679312451";
 
-  const url =
-`https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
+  const url =`https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
 
   // PAKAI LOCATION BIAR PASTI OPEN
   window.location.href = url;

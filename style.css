@@ -1278,3 +1278,124 @@ footer p{
         justify-content: center !important;
     }
 }
+
+/* Gaya Footer Umum */
+.footer {
+    padding: 40px 20px;
+    border-top: 4px solid #111;
+    text-align: center;
+}
+
+/* Tombol TikTok di Footer */
+.tiktok-footer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #000; /* Warna hitam khas TikTok */
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 900;
+    font-size: 14px;
+    border: 3px solid #111;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0px #ef6c00; /* Shadow oranye biar nyambung sama tema */
+    transition: 0.2s;
+}
+
+.tiktok-footer-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #ef6c00;
+}
+
+.tiktok-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Mengubah ikon hitam jadi putih */
+}
+
+/* Responsif HP */
+@media (max-width: 480px) {
+    .tiktok-footer-btn {
+        font-size: 12px;
+        padding: 10px 18px;
+    }
+}
+
+
+/* Tombol Instagram di Footer */
+.instagram-footer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #000; /* Warna hitam khas TikTok */
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 900;
+    font-size: 14px;
+    border: 3px solid #111;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0px #ef6c00; /* Shadow oranye biar nyambung sama tema */
+    transition: 0.2s;
+}
+
+.instagram-footer-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #ef6c00;
+}
+
+.instagram-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Mengubah ikon hitam jadi putih */
+}
+
+/* Responsif HP */
+@media (max-width: 480px) {
+    .instagram-footer-btn {
+        font-size: 12px;
+        padding: 10px 18px;
+    }
+}
+
+
+
+/* Tombol Instagram di Footer */
+.whatsapp-footer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #000; /* Warna hitam khas TikTok */
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 900;
+    font-size: 14px;
+    border: 3px solid #111;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0px #ef6c00; /* Shadow oranye biar nyambung sama tema */
+    transition: 0.2s;
+}
+
+.whatsapp-footer-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #ef6c00;
+}
+
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1); /* Mengubah ikon hitam jadi putih */
+}
+
+/* Responsif HP */
+@media (max-width: 480px) {
+    .whatsapp-footer-btn {
+        font-size: 12px;
+        padding: 10px 18px;
+    }
+}
