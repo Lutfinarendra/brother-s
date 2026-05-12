@@ -312,6 +312,14 @@ nav a:hover{
   transform:translateY(-4px);
 }
 
+body {
+    background-color: #f3e5ab;
+    /* Titik hitam dengan transparansi 15% agar tidak terlalu tajam */
+    background-image: radial-gradient(rgba(0,0,0,0.15) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-attachment: fixed;
+}
+
 /* FLOATING ICON */
 .icon{
   position:absolute;
@@ -1513,3 +1521,4 @@ footer p{
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px #111;
 }
+

@@ -238,12 +238,30 @@ function tutupModalQRIS() {
 }
 
 function konfirmasiBayarWA() {
-    // Fungsi ini akan mengarahkan user ke WA untuk kirim bukti
-    let total = 0;
-    cart.forEach(item => total += item.total);
+    // 1. Pastikan nomor WA benar (KODE NEGARA 62 + 896...)
+    const nomorWA = "6289679312451"; 
+
+    // 2. Susun Daftar Pesanan dari Array Cart
+    let listPesanan = "";
+    let totalHarga = 0;
+
+    cart.forEach((item, index) => {
+        listPesanan += `${index + 1}. ${item.name} (${item.size}) - ${item.qty} porsi\n`;
+        totalHarga += item.total;
+    });
+
+    // 3. Buat Template Pesan Lengkap
+    let teksPesan = `Halo Brother's Dessert! ✨\n\n`;
+    teksPesan += `Saya sudah bayar via *QRIS* untuk pesanan berikut:\n`;
+    teksPesan += `--------------------------\n`;
+    teksPesan += listPesanan; // Ini akan memunculkan Nama + Size + Qty
+    teksPesan += `--------------------------\n`;
+    teksPesan += `*Total Bayar:* Rp ${totalHarga.toLocaleString("id-ID")}\n\n`;
+    teksPesan += `Berikut bukti screenshot pembayarannya. Mohon diproses ya! 🙏`;
+
+    // 4. Kirim ke WhatsApp
+    const linkWA = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${encodeURIComponent(teksPesan)}`;
     
-    let pesan = `Halo Brother's Dessert! Saya sudah melakukan pembayaran via QRIS sebesar Rp ${total.toLocaleString("id-ID")}. Berikut bukti pembayarannya.`;
-    
-    let waLink = `https://wa.me/6289679312451?text=${encodeURIComponent(pesan)}`;
-    window.open(waLink, '_blank');
+    window.open(linkWA, '_blank');
 }
+
