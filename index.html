@@ -366,23 +366,22 @@
     <div id="cartList"></div>
 
     <div class="cart-footer">
-      <h3 id="cartTotal">Total: Rp 0</h3>
+    <h3 id="cartTotal">💰 Total: Rp 0</h3>
 
-      <button onclick="checkoutWA()">
-        Checkout WhatsApp 📲
-      </button>
+    <div class="input-nama-group">
+                <label for="namaPembeli">Nama Pemesan:</label>
+                <input type="text" id="namaPembeli" placeholder="Masukkan nama kamu..." class="input-brutal">
+            </div>
 
-      <button onclick="bukaModalQRIS()" class="btn-checkout qris">
-            Bayar via QRIS (Otomatis) 💸
-        </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-<div id="toast" class="toast"></div>
+    <div class="checkout-options">
+                <button onclick="checkoutWA()" class="btn-checkout wa">
+                    Checkout WhatsApp 📲
+                </button>
+                <button onclick="bukaModalQRIS()" class="btn-checkout qris">
+                    Bayar via QRIS (Otomatis) 💸
+                </button>
+            </div>
+        </div> </div> </div> <div id="toast" class="toast"></div>
 
 
 
@@ -437,7 +436,7 @@
   <div id="modal-qris" class="modal-overlay" style="display: none;">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Scan QRIS Statis</h2>
+            <h2>Silahkan di scan QRIS nya!</h2>
             <button onclick="tutupModalQRIS()" class="close-btn">✕</button>
         </div>
         

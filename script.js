@@ -182,44 +182,42 @@ function showToast(msg) {
 // ======================
 // CHECKOUT WHATSAPP (FIXED)
 // ======================
-function checkoutWA(){
+function checkoutWA() {
+    // 1. Validasi Keranjang Kosong
+    if (cart.length === 0) {
+        alert("Keranjang kamu masih kosong!");
+        return;
+    }
 
-  if(cart.length === 0){
-    alert("Keranjang kosong");
-    return;
-  }
+    // 2. Ambil Nama (Wajib diisi)
+    const nama = document.getElementById("namaPembeli").value;
+    if (!nama) {
+        alert("Mohon masukkan nama kamu dulu ya! 🙏");
+        return;
+    }
 
-  let text =
-`Halo Brother's Dessert Box! Saya ingin ikut Pre-Order:
+    // 3. Susun Detail Pesanan
+    let listPesanan = "";
+    let totalHarga = 0;
 
-`;
+    cart.forEach((item, i) => {
+        totalHarga += item.total;
+        listPesanan += `${i + 1}. ${item.name}\n   Size: ${item.size}\n   Jumlah: ${item.qty} porsi\n   Harga: Rp ${item.total.toLocaleString("id-ID")}\n\n`;
+    });
 
-  let total = 0;
+    // 4. Susun Format Pesan yang kamu inginkan
+    let text = `Halo Brother's Dessert Box! ✨\n\n`;
+    text += `Nama Pemesan: ${nama}\n\n`; // Menambahkan Nama sesuai permintaanmu
+    text += `Saya ingin ikut Pre-Order:\n\n`;
+    text += listPesanan;
+    text += `*Total Pesanan: Rp ${totalHarga.toLocaleString("id-ID")}*\n\n`;
+    text += `Apakah kuota masih tersedia? Mohon informasikan detail pembayarannya. Terima kasih!`;
 
-  cart.forEach((item,i)=>{
+    // 5. Kirim ke WhatsApp
+    const wa = "6289679312451";
+    const url = `https://api.whatsapp.com/send?phone=${wa}&text=${encodeURIComponent(text)}`;
 
-    total += item.total;
-
-    text +=
-`${i+1}. ${item.name}
-   Size: ${item.size}
-   Jumlah: ${item.qty} porsi
-   Harga: Rp ${item.total.toLocaleString("id-ID")}
-
-`;
-  });
-
-  text +=
-`Total Pesanan: Rp ${total.toLocaleString("id-ID")}
-
-Apakah kuota masih tersedia? Mohon informasikan detail pembayarannya. Terima kasih!`;
-
-  const wa = "6289679312451";
-
-  const url =`https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
-
-  // PAKAI LOCATION BIAR PASTI OPEN
-  window.location.href = url;
+    window.open(url, '_blank');
 }
 
 function bukaModalQRIS() {
@@ -240,6 +238,7 @@ function tutupModalQRIS() {
 function konfirmasiBayarWA() {
     // 1. Pastikan nomor WA benar (KODE NEGARA 62 + 896...)
     const nomorWA = "6289679312451"; 
+    const nama = document.getElementById("namaPembeli").value;
 
     // 2. Susun Daftar Pesanan dari Array Cart
     let listPesanan = "";
@@ -252,9 +251,10 @@ function konfirmasiBayarWA() {
 
     // 3. Buat Template Pesan Lengkap
     let teksPesan = `Halo Brother's Dessert! ✨\n\n`;
+    teksPesan += `*Nama Pemesan:* ${nama}\n`;
     teksPesan += `Saya sudah bayar via *QRIS* untuk pesanan berikut:\n`;
     teksPesan += `--------------------------\n`;
-    teksPesan += listPesanan; // Ini akan memunculkan Nama + Size + Qty
+    teksPesan += listPesanan; 
     teksPesan += `--------------------------\n`;
     teksPesan += `*Total Bayar:* Rp ${totalHarga.toLocaleString("id-ID")}\n\n`;
     teksPesan += `Berikut bukti screenshot pembayarannya. Mohon diproses ya! 🙏`;
